@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redirecting...</title>
+    <script>
+      window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const idRaw = urlParams.get('id');
+
+        if (idRaw) {
+          localStorage.setItem("invoice_countering_receipt_link_id", idRaw);
+          setTimeout(() => {
+            window.location.href = "/Countering/";
+          }, 1000);
+        } else {
+          // Optional: fallback redirect or just stay
+          console.error("Missing ID in URL.");
+        }
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
